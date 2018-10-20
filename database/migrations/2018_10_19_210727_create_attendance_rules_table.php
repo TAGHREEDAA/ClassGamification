@@ -15,6 +15,9 @@ class CreateAttendanceRulesTable extends Migration
     {
         Schema::create('attendance_rules', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('points');
+            $table->timestamp('max_checkin_time');
+
             $table->timestamps();
         });
     }

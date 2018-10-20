@@ -15,6 +15,9 @@ class CreateRulesTable extends Migration
     {
         Schema::create('rules', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->integer('points');
+            $table->enum('type',['HomeWork','Attitude']);
             $table->timestamps();
         });
     }

@@ -15,6 +15,13 @@ class CreateTeamFeatureGradesTable extends Migration
     {
         Schema::create('team_feature_grades', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer("grade");
+            $table->unsignedInteger('project_team_id');
+            $table->unsignedInteger('project_feature_id');
+
+
+            $table->foreign('project_feature_id')->references('id')->on('project_features');
+            $table->foreign('project_team_id')->references('id')->on('project_teams');
             $table->timestamps();
         });
     }

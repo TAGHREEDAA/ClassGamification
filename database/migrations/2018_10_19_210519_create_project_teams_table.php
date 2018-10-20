@@ -15,6 +15,11 @@ class CreateProjectTeamsTable extends Migration
     {
         Schema::create('project_teams', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('team_no');
+            $table->string('team_name');
+            $table->unsignedInteger('project_id');
+
+            $table->foreign('project_id')->references('id')->on('projects');
             $table->timestamps();
         });
     }

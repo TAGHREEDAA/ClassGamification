@@ -15,6 +15,14 @@ class CreateProjectStudentGradesTable extends Migration
     {
         Schema::create('project_student_grades', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('student_id');
+            $table->unsignedInteger('project_id');
+            $table->unsignedInteger('project_team_grade_id');
+            $table->integer('personal_grade');
+
+            $table->foreign('student_id')->references('id')->on('users');
+            $table->foreign('project_id')->references('id')->on('projects');
+            $table->foreign('project_team_grade_id')->references('id')->on('project_team_grades');
             $table->timestamps();
         });
     }

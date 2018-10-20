@@ -15,6 +15,12 @@ class CreateProjectFeaturesTable extends Migration
     {
         Schema::create('project_features', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('feature');
+            $table->integer('grade')->default(10);
+            $table->unsignedInteger('project_id');
+
+
+            $table->foreign('project_id')->references('id')->on('projects');
             $table->timestamps();
         });
     }

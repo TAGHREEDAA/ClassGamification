@@ -15,6 +15,15 @@ class CreateProjectTeamGradesTable extends Migration
     {
         Schema::create('project_team_grades', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('features_total_grades');
+            $table->boolean('delivered_on_time')->default(true);
+            $table->boolean('ignored')->default(false);
+            $table->integer('delay_days');
+
+            $table->unsignedInteger('project_team_id');
+
+
+            $table->foreign('project_team_id')->references('id')->on('project_teams');
             $table->timestamps();
         });
     }

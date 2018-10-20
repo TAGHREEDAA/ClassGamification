@@ -15,6 +15,14 @@ class CreateStudentAttendancesTable extends Migration
     {
         Schema::create('student_attendances', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('student_id');
+            $table->timestamp('check_in_time');
+            $table->unsignedInteger('student_id');
+            $table->unsignedInteger('attendance_rule_id');
+            $table->integer('applied_points');
+
+            $table->foreign('student_id')->references('id')->on('users');
+            $table->foreign('attendance_rule_id')->references('id')->on('attendance_rules');
             $table->timestamps();
         });
     }

@@ -15,6 +15,14 @@ class CreateStudentAttitudeEvaluationsTable extends Migration
     {
         Schema::create('student_attitude_evaluations', function (Blueprint $table) {
             $table->increments('id');
+            $table->timestamp('date');
+            $table->unsignedInteger('student_id');
+            $table->unsignedInteger('rule_id');
+            $table->integer('applied_points');
+
+            $table->foreign('student_id')->references('id')->on('users');
+            $table->foreign('rule_id')->references('id')->on('rules');
+
             $table->timestamps();
         });
     }
