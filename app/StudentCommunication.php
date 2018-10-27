@@ -6,19 +6,18 @@ use App\Rules;
 
 use Illuminate\Database\Eloquent\Model;
 
-class StudentHomework extends Model
+class StudentCommunication extends Model
 {
     /**
-     * the attributes that are mass assignable
+     * The attributes that are mass assigned
      * 
      * @var array
      */
     protected $fillable = [
-    	'date', 'student_id', 'role_id', 'points', 'delivered_on_time', 
-    	'ignored', 'delay_days_no'
+    	'student_id', 'role_id', 'points'
     ];
 
-    /** 
+    /**
      * for the student
      * 
      * @return object

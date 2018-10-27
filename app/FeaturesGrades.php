@@ -1,10 +1,10 @@
- <?php
+<?php
 
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Course extends Model
+class FeaturesGrades extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -12,6 +12,6 @@ class Course extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'code'
+        'feature', 'grade'
     ];
 }
