@@ -17,6 +17,9 @@ class CreateCoursesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('code');
+            $table->string('icon');
+            $table->string('cover');
+            $table->text('description');
             $table->timestamps();
         });
     }
