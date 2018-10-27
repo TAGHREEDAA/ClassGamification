@@ -17,7 +17,6 @@ class CreateStudentAttendancesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('student_id');
             $table->timestamp('check_in_time');
-            $table->unsignedInteger('student_id');
             $table->unsignedInteger('attendance_rule_id');
             $table->integer('applied_points');
 
