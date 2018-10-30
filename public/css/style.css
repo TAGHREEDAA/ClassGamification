@@ -59,7 +59,26 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 12px;
   color: #fff;
 }
-
+.cta-btn {
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 25px;
+    transition: 0.5s;
+    margin: 15px auto;
+    background: #18d26e;
+    border: 2px solid #18d26e;
+    color: #fff;
+}
+.cta-btn:hover {
+    color: #fff;
+    background: #18d26e;
+    border: 2px solid #fff;
+}
 @media (max-width: 768px) {
   .back-to-top {
     bottom: 15px;
@@ -704,6 +723,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   background-size: cover;
   padding: 60px 0 40px 0;
   position: relative;
+    text-align: center;
 }
 
 #courses::before {
@@ -720,6 +740,11 @@ body.mobile-nav-active #mobile-nav-toggle {
 #courses .container {
   position: relative;
   z-index: 10;
+}
+
+#courses .section-header p {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 #courses .courses-col {

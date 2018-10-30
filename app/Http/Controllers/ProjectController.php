@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Course;
-use App\Http\Requests\CourseRequest;
+use App\Project;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
 
-class CourseController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +14,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-        return view('course.index')->with('courses',Course::all());
+        return view('project.index')->with('projects',Project::all());
     }
 
     /**
@@ -37,20 +35,7 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        $image = $request->file('cover');
-        $newName = rand().'.'.$image->getClientOriginalExtension();
-        $image->move(public_path('imgs'), $newName);
-
-        $course = new Course([
-            'name' => $request->get('name'),
-            'code'=> $request->get('code'),
-            'icon' => $request->get('icon'),
-            'cover'=> $newName,
-            'description'=> strip_tags($request->get('description')),
-
-        ]);
-        $course->save();
-        return redirect('/course')->with('success', 'Course has been added');
+        //
     }
 
     /**
@@ -61,7 +46,8 @@ class CourseController extends Controller
      */
     public function show($id)
     {
-        return view('course.show')->with('course',Course::findOrFail($id));
+        $project = Project::findOrFail($id);
+        return view('project.show')->with('project',$project);
     }
 
     /**

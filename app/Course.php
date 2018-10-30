@@ -1,4 +1,4 @@
- <?php
+<?php
 
 namespace App;
 
@@ -12,6 +12,6 @@ class Course extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'code'
+        'name', 'code','icon','cover','description'
     ];
 }

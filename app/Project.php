@@ -19,12 +19,12 @@ class Project extends Model
 
     public function course()
     {
-    	return Course::where('id', $this->course_id)->first()
+    	return $this->belongsTo(Course::class);
     }
 
     /**
      * Get the team
-     * 
+     *
      * @return object
      */
     public function team()
